@@ -47,16 +47,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bapersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bapersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bapersDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="F_Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Home.Designer.cs">
+      <DependentUpon>F_Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Proc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Proc.Designer.cs">
+      <DependentUpon>F_Proc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_Home.resx">
+      <DependentUpon>F_Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Proc.resx">
+      <DependentUpon>F_Proc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +95,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="bapersDataSet.xsc">
+      <DependentUpon>bapersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bapersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bapersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bapersDataSet.xss">
+      <DependentUpon>bapersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bapersDataSet1.xsc">
+      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bapersDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bapersDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bapersDataSet1.xss">
+      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

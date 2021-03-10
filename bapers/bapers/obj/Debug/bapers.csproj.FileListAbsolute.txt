@@ -23,3 +23,5 @@ C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\bin\Debug\MySql
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.exe.config
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.csproj.CopyComplete
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Login.resources
+C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Home.resources
+C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Proc.resources

@@ -16,7 +16,7 @@ namespace bapers
     
     public partial class F_Login : Form
     {
-       
+       //database connect info
         private string server = "localhost";
         private string database = "bapers";
         private string uid  = "root";
@@ -35,18 +35,18 @@ namespace bapers
            
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + pw + ";";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + pw + ";";//creating the connection string
 
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
-            MessageBox.Show("Connection Open!");
+            MessageBox.Show("Connection Open!");//testing the connection
             connection.Close();
 
 
         }
 
-        private void BT_input_Click(object sender, EventArgs e)
+        private void BT_input_Click(object sender, EventArgs e)//makes sure email and password are valid
         {
             
             string connectionString;
@@ -74,7 +74,12 @@ namespace bapers
 
             if(dup == 1)
             {
-                MessageBox.Show("Access Granted, " + output + "!");
+                //MessageBox.Show("Access Granted, " + output + "!");
+                F_Home fh = new F_Home();
+                this.Hide();
+                fh.ShowDialog();
+                this.Show();
+                
             }
             else
             {
