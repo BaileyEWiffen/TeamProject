@@ -70,12 +70,13 @@ namespace bapers
                 output = Convert.ToString(dataReader.GetValue(0));
                 dup += 1;
             }
+            
             connection.Close();
 
             if(dup == 1)
             {
                 //MessageBox.Show("Access Granted, " + output + "!");
-                F_Home fh = new F_Home();
+                F_Home fh = new F_Home(output);
                 this.Hide();
                 fh.ShowDialog();
                 this.Show();

@@ -52,10 +52,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bapersDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="bapersDataSet1.Designer.cs">
+    <Compile Include="ContactName.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+      <DependentUpon>ContactName.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="F_Acct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Acct.Designer.cs">
+      <DependentUpon>F_Acct.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Home.cs">
       <SubType>Form</SubType>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_Acct.resx">
+      <DependentUpon>F_Acct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Home.resx">
       <DependentUpon>F_Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,16 +115,16 @@
     <None Include="bapersDataSet.xss">
       <DependentUpon>bapersDataSet.xsd</DependentUpon>
     </None>
-    <None Include="bapersDataSet1.xsc">
-      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+    <None Include="ContactName.xsc">
+      <DependentUpon>ContactName.xsd</DependentUpon>
     </None>
-    <None Include="bapersDataSet1.xsd">
+    <None Include="ContactName.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bapersDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>ContactName.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="bapersDataSet1.xss">
-      <DependentUpon>bapersDataSet1.xsd</DependentUpon>
+    <None Include="ContactName.xss">
+      <DependentUpon>ContactName.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -44,6 +44,7 @@
             this.BT_ACCT.TabIndex = 0;
             this.BT_ACCT.Text = "BAP-ACCT";
             this.BT_ACCT.UseVisualStyleBackColor = true;
+            this.BT_ACCT.Click += new System.EventHandler(this.BT_ACCT_Click);
             // 
             // BT_PROC
             // 

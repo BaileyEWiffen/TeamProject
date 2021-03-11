@@ -27,7 +27,7 @@ namespace bapers
 
         private void BT_test_Click(object sender, EventArgs e)
         {
-            //LB_test.Text = B_job.Items[B_job.SelectedIndex].GetType().ToString();
+            
             DataRowView d = (DataRowView)B_job.Items[B_job.SelectedIndex];
             LB_test.Text = d.Row["job number"].ToString();
         }

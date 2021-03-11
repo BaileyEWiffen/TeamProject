@@ -35,7 +35,6 @@
             this.jobTableAdapter = new bapers.bapersDataSetTableAdapters.jobTableAdapter();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.B_job = new System.Windows.Forms.ListBox();
-            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.BT_test = new System.Windows.Forms.Button();
             this.LB_test = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,7 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -155,7 +153,6 @@
             this.Load += new System.EventHandler(this.F_Proc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,9 +168,7 @@
         private System.Windows.Forms.ListBox B_job;
         private System.Windows.Forms.Button BT_test;
         private System.Windows.Forms.Label LB_test;
-        private bapersDataSet1 bapersDataSet1;
-        private System.Windows.Forms.BindingSource jobBindingSource1;
-        private bapersDataSet1TableAdapters.jobTableAdapter jobTableAdapter1;
+        
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
