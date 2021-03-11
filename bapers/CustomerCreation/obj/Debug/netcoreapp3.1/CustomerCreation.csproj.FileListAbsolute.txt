@@ -1,0 +1,15 @@
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.exe
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.deps.json
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.runtimeconfig.json
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.runtimeconfig.dev.json
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.dll
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\bin\Debug\netcoreapp3.1\CustomerCreation.pdb
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.csprojAssemblyReference.cache
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.CustomerCreation.resources
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.csproj.GenerateResource.cache
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.AssemblyInfoInputs.cache
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.AssemblyInfo.cs
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.csproj.CoreCompileInputs.cache
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.dll
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.pdb
+C:\Users\Finlay\source\repos\CustomerCreation\CustomerCreation\obj\Debug\netcoreapp3.1\CustomerCreation.genruntimeconfig.cache
