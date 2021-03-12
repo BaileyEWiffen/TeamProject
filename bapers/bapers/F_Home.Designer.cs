@@ -64,6 +64,7 @@
             this.BT_REPT.TabIndex = 2;
             this.BT_REPT.Text = "BAP-REPT";
             this.BT_REPT.UseVisualStyleBackColor = true;
+            this.BT_REPT.Click += new System.EventHandler(this.BT_REPT_Click);
             // 
             // BT_PAYM
             // 

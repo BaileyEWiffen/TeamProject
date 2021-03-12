@@ -63,6 +63,12 @@
     <Compile Include="F_Acct.Designer.cs">
       <DependentUpon>F_Acct.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_CustCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_CustCreation.Designer.cs">
+      <DependentUpon>F_CustCreation.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Home.cs">
       <SubType>Form</SubType>
     </Compile>

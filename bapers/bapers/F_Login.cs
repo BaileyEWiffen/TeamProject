@@ -92,5 +92,10 @@ namespace bapers
 
 
         }
+
+        private void F_Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

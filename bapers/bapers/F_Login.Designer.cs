@@ -103,6 +103,7 @@
             this.Controls.Add(this.BT_enter);
             this.Name = "F_Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.F_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

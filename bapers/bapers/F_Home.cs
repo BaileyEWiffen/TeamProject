@@ -42,5 +42,13 @@ namespace bapers
             this.Show();
 
         }
+
+        private void BT_REPT_Click(object sender, EventArgs e)
+        {
+            F_CustCreation fc = new F_CustCreation();
+            this.Hide();
+            fc.ShowDialog();
+            this.Show();
+        }
     }
 }
