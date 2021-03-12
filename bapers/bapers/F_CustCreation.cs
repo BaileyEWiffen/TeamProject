@@ -16,5 +16,10 @@ namespace bapers
         {
             InitializeComponent();
         }
+
+        private void F_CustCreation_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

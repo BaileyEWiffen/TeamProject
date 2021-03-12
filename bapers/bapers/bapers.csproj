@@ -92,6 +92,9 @@
     <EmbeddedResource Include="F_Acct.resx">
       <DependentUpon>F_Acct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_CustCreation.resx">
+      <DependentUpon>F_CustCreation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Home.resx">
       <DependentUpon>F_Home.cs</DependentUpon>
     </EmbeddedResource>
