@@ -57,6 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactName.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ContactName2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactName2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="F_Acct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +136,17 @@
     </None>
     <None Include="ContactName.xss">
       <DependentUpon>ContactName.xsd</DependentUpon>
+    </None>
+    <None Include="ContactName2.xsc">
+      <DependentUpon>ContactName2.xsd</DependentUpon>
+    </None>
+    <None Include="ContactName2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContactName2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContactName2.xss">
+      <DependentUpon>ContactName2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
