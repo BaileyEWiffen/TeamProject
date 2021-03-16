@@ -86,11 +86,23 @@
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_NewUser.Designer.cs">
+      <DependentUpon>F_NewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Proc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_Proc.Designer.cs">
       <DependentUpon>F_Proc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_UserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_UserSearch.Designer.cs">
+      <DependentUpon>F_UserSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_NewUser.resx">
+      <DependentUpon>F_NewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Proc.resx">
       <DependentUpon>F_Proc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_UserSearch.resx">
+      <DependentUpon>F_UserSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

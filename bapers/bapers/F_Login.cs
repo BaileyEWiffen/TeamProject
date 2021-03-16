@@ -60,7 +60,7 @@ namespace bapers
             MySqlDataReader dataReader;
             String sql, output = "";
 
-            sql = "SELECT role FROM user WHERE email= '"+TB_email.Text+"' AND password= '"+TB_password.Text+"';";
+            sql = "SELECT role FROM user WHERE UserName= '"+TB_email.Text+"' AND password= '"+TB_password.Text+"';";
             command = new MySqlCommand(sql, connection);
             dataReader = command.ExecuteReader();
 
