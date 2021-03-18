@@ -23,7 +23,29 @@ namespace bapers
         {
             // TODO: This line of code loads data into the 'contactName2.customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter1.Fill(this.contactName2.customer);
-           
+            DB_Connect db = new DB_Connect();
+
+            B_contact.Items.Clear();
+
+            string sql = "SELECT contact_name FROM customer where contact_name like @val0;";
+            object[] o = new object[1];
+            o[0] ="%";
+
+            MySqlDataReader dataReader = db.query(sql, o);
+
+
+
+
+
+
+             while (dataReader.Read())
+            {
+                int i = 0;
+
+                B_contact.Items.Add(Convert.ToString(dataReader.GetValue(i)));
+                i++;
+
+            }
 
 
         }
@@ -36,30 +58,37 @@ namespace bapers
         
         private void BT_search_Click(object sender, EventArgs e)
         {
+            
+
+
+
+        }
+
+        private void TB_search_TextChanged(object sender, EventArgs e)
+        {
             DB_Connect db = new DB_Connect();
 
             B_contact.Items.Clear();
 
             string sql = "SELECT contact_name FROM customer where contact_name like @val0;";
             object[] o = new object[1];
-            o[0] = TB_search.Text +"%";
+            o[0] = TB_search.Text + "%";
 
             MySqlDataReader dataReader = db.query(sql, o);
 
 
-           
-           
-           
 
-            while (dataReader.Read()) {
+
+
+
+            while (dataReader.Read())
+            {
                 int i = 0;
-                
+
                 B_contact.Items.Add(Convert.ToString(dataReader.GetValue(i)));
                 i++;
-                
+
             }
-
-
 
         }
     }
