@@ -48,21 +48,16 @@ namespace bapers
 
         private void BT_input_Click(object sender, EventArgs e)//makes sure email and password are valid
         {
-            
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + pw + ";";
-
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-            MySqlCommand command;
-            MySqlDataReader dataReader;
+            DB_Connect db = new DB_Connect();
             String sql, output = "";
+            MySqlDataReader dataReader;
 
-            sql = "SELECT role FROM user WHERE UserName= '"+TB_email.Text+"' AND password= '"+TB_password.Text+"';";
-            command = new MySqlCommand(sql, connection);
-            dataReader = command.ExecuteReader();
+            sql = "SELECT role FROM user WHERE UserName= @val0 AND password= @val1;";
+            object[] o = new object[2];
+            o[0] = TB_email.Text;
+            o[1] = TB_password.Text;
+
+            dataReader = db.query(sql,o);
 
             int dup = 0;
             while (dataReader.Read())//checks how many instances of the username and password there are in the database
@@ -70,8 +65,11 @@ namespace bapers
                 output = Convert.ToString(dataReader.GetValue(0));
                 dup += 1;
             }
-            
-            connection.Close();
+
+            db.close();
+    
+            dataReader.Dispose();
+           
 
             if(dup == 1)
             {

@@ -14,10 +14,6 @@ namespace bapers
     public partial class F_Acct : Form
     {
 
-        private string server = "localhost";
-        private string database = "bapers";
-        private string uid = "root";
-        private string pw = "network";
         public F_Acct()
         {
             InitializeComponent();
@@ -40,22 +36,20 @@ namespace bapers
         
         private void BT_search_Click(object sender, EventArgs e)
         {
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + pw + ";";
-
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-            MySqlCommand command;
-            MySqlDataReader dataReader;
-            String sql;
+            DB_Connect db = new DB_Connect();
 
             B_contact.Items.Clear();
 
-            sql = "SELECT contact_name FROM customer where contact_name like '" + TB_search.Text + "%';";
-            command = new MySqlCommand(sql, connection);
-            dataReader = command.ExecuteReader();
+            string sql = "SELECT contact_name FROM customer where contact_name like @val0;";
+            object[] o = new object[1];
+            o[0] = TB_search.Text +"%";
+
+            MySqlDataReader dataReader = db.query(sql, o);
+
+
+           
+           
+           
 
             while (dataReader.Read()) {
                 int i = 0;

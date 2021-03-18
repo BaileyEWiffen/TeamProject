@@ -14,10 +14,7 @@ namespace bapers
     public partial class F_NewUser : Form
     {
 
-        private string server = "localhost";
-        private string database = "bapers";
-        private string uid = "root";
-        private string pw = "network";
+       
         public F_NewUser()
         {
             InitializeComponent();
@@ -35,21 +32,22 @@ namespace bapers
 
         private void BT_create_Click(object sender, EventArgs e)
         {
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + pw + ";";
 
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            connection.Open();
-
-            MySqlCommand command;
+            DB_Connect db = new DB_Connect();
 
             String sql;
+            object[] o = new object[3];
+            o[0] = TB_uname.Text;
+            o[1] = TB_password.Text;
+            o[2] = CB_role.Text;
 
-            sql = "insert into user values ('"+TB_uname.Text+"', '"+TB_password.Text+"', '"+CB_role.Text+ "');";
+            sql = "insert into user values (@val0,@val1,@val2);";
+            db.query(sql, o);
+            db.close();
+            MessageBox.Show("User made successfully");
+            
 
-            command = new MySqlCommand(sql, connection);
-            command.ExecuteNonQuery();
+
         }
     }
 }

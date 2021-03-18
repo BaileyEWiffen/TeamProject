@@ -12,23 +12,29 @@ namespace bapers
         //private string connectionString = "SERVER=" + "localhost" + ";" + "DATABASE=" + "bapers" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "network" + ";";
         private MySqlConnection connection = new MySqlConnection("SERVER=" + "localhost" + ";" + "DATABASE=" + "bapers" + ";" + "UID=" + "root" + ";" + "PASSWORD=" + "network" + ";");
 
+        public void close()
+        {
+            connection.Close();
+        }
       
 
 
-        public async Task<MySqlDataReader> query(string sql, object[] a)
+        public MySqlDataReader query(string sql, object[] a)
         {
             connection.Open();
             MySqlCommand command = new MySqlCommand(sql, connection);
-            command.Prepare();
+            
 
             for(int i =0; i < a.Length; i++)
             {
 
                 command.Parameters.AddWithValue("@val"+Convert.ToString(i), a[i]);
             }
+            command.Prepare();
 
             MySqlDataReader dataReader ;
             dataReader = command.ExecuteReader();
+            
             return dataReader;
 
         }

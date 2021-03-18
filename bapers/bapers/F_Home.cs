@@ -23,7 +23,7 @@ namespace bapers
 
         private void BT_ADMN_Click(object sender, EventArgs e)
         {
-            F_UserSearch fu = new F_UserSearch();
+            F_NewUser fu = new F_NewUser();
             this.Hide();
             fu.ShowDialog();
             this.Show();

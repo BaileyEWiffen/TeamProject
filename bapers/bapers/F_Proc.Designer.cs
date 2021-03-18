@@ -40,6 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.B_Task = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BT_statUpdata = new System.Windows.Forms.Button();
+            this.TB_status = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet)).BeginInit();
             this.SuspendLayout();
@@ -49,10 +53,11 @@
             this.listBox1.DataSource = this.jobBindingSource;
             this.listBox1.DisplayMember = "job number";
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(171, 144);
+            this.listBox1.Location = new System.Drawing.Point(12, 41);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(88, 199);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // jobBindingSource
             // 
@@ -73,9 +78,9 @@
             this.listBox2.DataSource = this.jobBindingSource;
             this.listBox2.DisplayMember = "deadline";
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(265, 144);
+            this.listBox2.Location = new System.Drawing.Point(106, 41);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 199);
+            this.listBox2.Size = new System.Drawing.Size(69, 199);
             this.listBox2.TabIndex = 1;
             // 
             // B_job
@@ -83,9 +88,9 @@
             this.B_job.DataSource = this.jobBindingSource;
             this.B_job.DisplayMember = "Status";
             this.B_job.FormattingEnabled = true;
-            this.B_job.Location = new System.Drawing.Point(401, 144);
+            this.B_job.Location = new System.Drawing.Point(181, 41);
             this.B_job.Name = "B_job";
-            this.B_job.Size = new System.Drawing.Size(102, 199);
+            this.B_job.Size = new System.Drawing.Size(80, 199);
             this.B_job.TabIndex = 2;
             this.B_job.ValueMember = "job number";
             // 
@@ -111,16 +116,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 125);
+            this.label1.Location = new System.Drawing.Point(31, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Job No.";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(311, 125);
+            this.label2.Location = new System.Drawing.Point(122, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 6;
@@ -129,17 +135,57 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(444, 125);
+            this.label3.Location = new System.Drawing.Point(212, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Status";
+            // 
+            // B_Task
+            // 
+            this.B_Task.FormattingEnabled = true;
+            this.B_Task.Location = new System.Drawing.Point(312, 53);
+            this.B_Task.Name = "B_Task";
+            this.B_Task.Size = new System.Drawing.Size(147, 342);
+            this.B_Task.TabIndex = 8;
+            this.B_Task.SelectedIndexChanged += new System.EventHandler(this.B_Task_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(359, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tasks : Status";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // BT_statUpdata
+            // 
+            this.BT_statUpdata.Location = new System.Drawing.Point(497, 260);
+            this.BT_statUpdata.Name = "BT_statUpdata";
+            this.BT_statUpdata.Size = new System.Drawing.Size(97, 24);
+            this.BT_statUpdata.TabIndex = 10;
+            this.BT_statUpdata.Text = "Update";
+            this.BT_statUpdata.UseVisualStyleBackColor = true;
+            this.BT_statUpdata.Click += new System.EventHandler(this.BT_statUpdata_Click);
+            // 
+            // TB_status
+            // 
+            this.TB_status.Location = new System.Drawing.Point(485, 220);
+            this.TB_status.Name = "TB_status";
+            this.TB_status.Size = new System.Drawing.Size(122, 20);
+            this.TB_status.TabIndex = 11;
             // 
             // F_Proc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TB_status);
+            this.Controls.Add(this.BT_statUpdata);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.B_Task);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -172,5 +218,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox B_Task;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BT_statUpdata;
+        private System.Windows.Forms.TextBox TB_status;
     }
 }
