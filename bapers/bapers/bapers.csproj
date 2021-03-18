@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>bapers.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -52,10 +55,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bapersDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="ContactName.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ContactName.xsd</DependentUpon>
+    <Compile Include="ContactName.Designer.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Acct.cs">
       <SubType>Form</SubType>
@@ -87,8 +92,13 @@
     <Compile Include="F_Proc.Designer.cs">
       <DependentUpon>F_Proc.cs</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Acct.resx">
       <DependentUpon>F_Acct.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +114,12 @@
     <EmbeddedResource Include="F_Proc.resx">
       <DependentUpon>F_Proc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Release\bapers.F_Acct.resources" />
+    <EmbeddedResource Include="obj\Release\bapers.F_CustCreation.resources" />
+    <EmbeddedResource Include="obj\Release\bapers.F_Home.resources" />
+    <EmbeddedResource Include="obj\Release\bapers.F_Login.resources" />
+    <EmbeddedResource Include="obj\Release\bapers.F_Proc.resources" />
+    <EmbeddedResource Include="obj\Release\bapers.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,6 +129,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="App.config" />
     <None Include="bapersDataSet.xsc">
       <DependentUpon>bapersDataSet.xsd</DependentUpon>
     </None>
@@ -124,17 +141,20 @@
     <None Include="bapersDataSet.xss">
       <DependentUpon>bapersDataSet.xsd</DependentUpon>
     </None>
+    <None Include="bin\Debug\bapers.exe.config" />
+    <None Include="bin\Release\bapers.exe.config" />
     <None Include="ContactName.xsc">
       <DependentUpon>ContactName.xsd</DependentUpon>
     </None>
-    <None Include="ContactName.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ContactName.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="ContactName.xsd" />
     <None Include="ContactName.xss">
       <DependentUpon>ContactName.xsd</DependentUpon>
     </None>
+    <None Include="CustomerCreation.csproj" />
+    <None Include="obj\Release\bapers.csproj.CopyComplete" />
+    <None Include="obj\Release\bapers.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\bapers.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\bapers.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -146,7 +166,44 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Content Include="bin\Debug\bapers.exe" />
+    <Content Include="bin\Debug\bapers.pdb" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\Renci.SshNet.dll" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\Zstandard.Net.dll" />
+    <Content Include="bin\Release\bapers.exe" />
+    <Content Include="bin\Release\bapers.pdb" />
+    <Content Include="bin\Release\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Release\Google.Protobuf.dll" />
+    <Content Include="bin\Release\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Release\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Release\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Release\MySql.Data.dll" />
+    <Content Include="bin\Release\MySql.Data.xml" />
+    <Content Include="bin\Release\Renci.SshNet.dll" />
+    <Content Include="bin\Release\System.Buffers.dll" />
+    <Content Include="bin\Release\System.Memory.dll" />
+    <Content Include="bin\Release\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Release\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Release\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Release\Zstandard.Net.dll" />
+    <Content Include="CustomerCreation.csproj.user" />
+    <Content Include="obj\Release\bapers.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\bapers.exe" />
+    <Content Include="obj\Release\bapers.pdb" />
+    <Content Include="obj\Release\TempPE\bapersDataSet.Designer.cs.dll" />
+    <Content Include="obj\Release\TempPE\ContactName.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
