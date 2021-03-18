@@ -62,6 +62,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactName2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Connect.cs" />
     <Compile Include="F_Acct.cs">
       <SubType>Form</SubType>
     </Compile>
