@@ -44,14 +44,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BT_statUpdata = new System.Windows.Forms.Button();
             this.TB_status = new System.Windows.Forms.TextBox();
+            this.jobDeadlineStat = new bapers.JobDeadlineStat();
+            this.jobBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.jobTableAdapter1 = new bapers.JobDeadlineStatTableAdapters.jobTableAdapter();
+            this.jobDeadlineStatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bapersDataSet1 = new bapers.bapersDataSet1();
+            this.jobBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.jobTableAdapter2 = new bapers.bapersDataSet1TableAdapters.jobTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobDeadlineStat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobDeadlineStatBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.jobBindingSource;
-            this.listBox1.DisplayMember = "job number";
+            this.listBox1.DataSource = this.jobBindingSource2;
+            this.listBox1.DisplayMember = "job_number";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 41);
             this.listBox1.Name = "listBox1";
@@ -63,6 +75,7 @@
             // 
             this.jobBindingSource.DataMember = "job";
             this.jobBindingSource.DataSource = this.bapersDataSet;
+            this.jobBindingSource.CurrentChanged += new System.EventHandler(this.jobBindingSource_CurrentChanged);
             // 
             // bapersDataSet
             // 
@@ -75,7 +88,7 @@
             // 
             // listBox2
             // 
-            this.listBox2.DataSource = this.jobBindingSource;
+            this.listBox2.DataSource = this.jobBindingSource2;
             this.listBox2.DisplayMember = "deadline";
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(106, 41);
@@ -85,14 +98,13 @@
             // 
             // B_job
             // 
-            this.B_job.DataSource = this.jobBindingSource;
+            this.B_job.DataSource = this.jobBindingSource2;
             this.B_job.DisplayMember = "Status";
             this.B_job.FormattingEnabled = true;
             this.B_job.Location = new System.Drawing.Point(181, 41);
             this.B_job.Name = "B_job";
             this.B_job.Size = new System.Drawing.Size(80, 199);
             this.B_job.TabIndex = 2;
-            this.B_job.ValueMember = "job number";
             // 
             // BT_test
             // 
@@ -177,6 +189,40 @@
             this.TB_status.Size = new System.Drawing.Size(122, 20);
             this.TB_status.TabIndex = 11;
             // 
+            // jobDeadlineStat
+            // 
+            this.jobDeadlineStat.DataSetName = "JobDeadlineStat";
+            this.jobDeadlineStat.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // jobBindingSource1
+            // 
+            this.jobBindingSource1.DataMember = "job";
+            this.jobBindingSource1.DataSource = this.jobDeadlineStat;
+            // 
+            // jobTableAdapter1
+            // 
+            this.jobTableAdapter1.ClearBeforeFill = true;
+            // 
+            // jobDeadlineStatBindingSource
+            // 
+            this.jobDeadlineStatBindingSource.DataSource = this.jobDeadlineStat;
+            this.jobDeadlineStatBindingSource.Position = 0;
+            this.jobDeadlineStatBindingSource.CurrentChanged += new System.EventHandler(this.jobDeadlineStatBindingSource_CurrentChanged);
+            // 
+            // bapersDataSet1
+            // 
+            this.bapersDataSet1.DataSetName = "bapersDataSet1";
+            this.bapersDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // jobBindingSource2
+            // 
+            this.jobBindingSource2.DataMember = "job";
+            this.jobBindingSource2.DataSource = this.bapersDataSet1;
+            // 
+            // jobTableAdapter2
+            // 
+            this.jobTableAdapter2.ClearBeforeFill = true;
+            // 
             // F_Proc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +245,11 @@
             this.Load += new System.EventHandler(this.F_Proc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobDeadlineStat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobDeadlineStatBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bapersDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +273,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BT_statUpdata;
         private System.Windows.Forms.TextBox TB_status;
+        private JobDeadlineStat jobDeadlineStat;
+        private System.Windows.Forms.BindingSource jobBindingSource1;
+        private JobDeadlineStatTableAdapters.jobTableAdapter jobTableAdapter1;
+        private System.Windows.Forms.BindingSource jobDeadlineStatBindingSource;
+        private bapersDataSet1 bapersDataSet1;
+        private System.Windows.Forms.BindingSource jobBindingSource2;
+        private bapersDataSet1TableAdapters.jobTableAdapter jobTableAdapter2;
     }
 }

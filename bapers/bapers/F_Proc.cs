@@ -22,9 +22,13 @@ namespace bapers
 
         private void F_Proc_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'bapersDataSet1.job' table. You can move, or remove it, as needed.
+            this.jobTableAdapter2.Fill(this.bapersDataSet1.job);
+            // TODO: This line of code loads data into the 'jobDeadlineStat.job' table. You can move, or remove it, as needed.
+            this.jobTableAdapter1.Fill(this.jobDeadlineStat.job);
+
             // TODO: This line of code loads data into the 'bapersDataSet.job' table. You can move, or remove it, as needed.
-            this.jobTableAdapter.Fill(this.bapersDataSet.job);
+            //this.jobTableAdapter.Fill(this.bapersDataSet.job);
 
         }
 
@@ -42,7 +46,7 @@ namespace bapers
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataRowView d = (DataRowView)B_job.Items[B_job.SelectedIndex];
-            LB_test.Text = d.Row["job number"].ToString();
+            LB_test.Text = d.Row["job_number"].ToString();
 
             UpdataStat();
             
@@ -88,8 +92,8 @@ namespace bapers
             DB_Connect db = new DB_Connect();
             String sql = "select Task_ID, status from task_job where Job_number =@val0";
             object[] o = new object[1];
-            o[0] = Convert.ToInt32(d.Row["job number"]);
-            Jn = Convert.ToInt32(d.Row["job number"]);
+            o[0] = Convert.ToInt32(d.Row["job_number"]);
+            Jn = Convert.ToInt32(d.Row["job_number"]);
             MySqlDataReader reader = db.query(sql, o);
             B_Task.Items.Clear();
 
@@ -107,6 +111,16 @@ namespace bapers
             }
             db.close();
             reader.Dispose();
+        }
+
+        private void jobBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void jobDeadlineStatBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
