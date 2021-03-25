@@ -45,6 +45,24 @@ namespace bapers
 
         private void BT_REPT_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void BT_PAYM_Click(object sender, EventArgs e)
+        {
+            F_Payment fp = new F_Payment();
+            this.Hide();
+            fp.ShowDialog();
+            this.Show();
+        }
+
+        private void F_Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BT_CUST_Click(object sender, EventArgs e)
+        {
             F_CustCreation fc = new F_CustCreation();
             this.Hide();
             fc.ShowDialog();

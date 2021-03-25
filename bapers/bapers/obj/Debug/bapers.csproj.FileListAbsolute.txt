@@ -56,3 +56,4 @@ C:\Users\Finlay\Documents\GitHub\TeamProject\bapers\bapers\obj\Debug\bapers.cspr
 C:\Users\Finlay\Documents\GitHub\TeamProject\bapers\bapers\obj\Debug\bapers.exe
 C:\Users\Finlay\Documents\GitHub\TeamProject\bapers\bapers\obj\Debug\bapers.pdb
 C:\Users\Finlay\Documents\GitHub\TeamProject\bapers\bapers\obj\Debug\CustomerCreation.CustomerCreation.resources
+C:\Users\Finlay\Documents\GitHub\TeamProject\bapers\bapers\obj\Debug\bapers.F_Payment.resources

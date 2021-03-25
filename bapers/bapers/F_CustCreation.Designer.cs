@@ -37,7 +37,7 @@
             this.txtPhoneNum = new System.Windows.Forms.TextBox();
             this.lblPhoneNum = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbValuedCustomer = new System.Windows.Forms.CheckBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -114,14 +114,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Valued Customer:";
             // 
-            // checkBox1
+            // cbValuedCustomer
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(205, 493);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(22, 21);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbValuedCustomer.AutoSize = true;
+            this.cbValuedCustomer.Location = new System.Drawing.Point(205, 493);
+            this.cbValuedCustomer.Name = "cbValuedCustomer";
+            this.cbValuedCustomer.Size = new System.Drawing.Size(22, 21);
+            this.cbValuedCustomer.TabIndex = 3;
+            this.cbValuedCustomer.UseVisualStyleBackColor = true;
             // 
             // btnSubmit
             // 
@@ -139,7 +139,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 836);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbValuedCustomer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblPhoneNum);
             this.Controls.Add(this.lblAddress);
@@ -168,7 +168,7 @@
         private System.Windows.Forms.TextBox txtPhoneNum;
         private System.Windows.Forms.Label lblPhoneNum;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbValuedCustomer;
         private System.Windows.Forms.Button btnSubmit;
     }
 }
