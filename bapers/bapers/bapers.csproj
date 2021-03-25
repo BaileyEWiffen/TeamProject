@@ -70,6 +70,7 @@
       <DependentUpon>ContactName2.xsd</DependentUpon>
     </Compile>
     <Compile Include="DB_Connect.cs" />
+    <Compile Include="Discount.cs" />
     <Compile Include="F_Acct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,12 @@
     <Compile Include="F_NewUser.Designer.cs">
       <DependentUpon>F_NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Paym.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Paym.Designer.cs">
+      <DependentUpon>F_Paym.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Proc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_NewUser.resx">
       <DependentUpon>F_NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Paym.resx">
+      <DependentUpon>F_Paym.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Proc.resx">
       <DependentUpon>F_Proc.cs</DependentUpon>

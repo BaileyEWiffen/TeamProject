@@ -74,6 +74,7 @@
             this.BT_PAYM.TabIndex = 3;
             this.BT_PAYM.Text = "BAP-PAYM";
             this.BT_PAYM.UseVisualStyleBackColor = true;
+            this.BT_PAYM.Click += new System.EventHandler(this.BT_PAYM_Click);
             // 
             // BT_CUST
             // 

@@ -53,5 +53,13 @@ namespace bapers
             fc.ShowDialog();
             this.Show();
         }
+
+        private void BT_PAYM_Click(object sender, EventArgs e)
+        {
+            F_Paym fp = new F_Paym();
+            this.Hide();
+            fp.ShowDialog();
+            this.Show();
+        }
     }
 }
