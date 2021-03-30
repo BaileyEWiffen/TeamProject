@@ -167,15 +167,33 @@ namespace bapers
 
                 ed = null;
             }
-
+            object[] ma = { };
             DB_Connect db = new DB_Connect();
-            
-            object[] o = {500,p, pt, ct,l4, accNo, ed};
+            MySqlDataReader dataReader;
+            string max = "Select MAX(payment_id) from payment;";
+             dataReader = db.query(max, ma);
+            int pk = 0;
+            while (dataReader.Read())
+            {
+                pk = ((int)dataReader.GetValue(0)+1);
+            }
+            db.close();
+
+            object[] o = {pk,p, pt, ct,l4, accNo, ed};
             string sql = "insert into payment values(@val0,@val1,@val2,@val3,@val4,@val5,@val6);";
            //MessageBox.Show(p.ToString()+ pt+ ct+ l4+ accNo+ ed);
            db.query(sql, o);
-            
             db.close();
+
+            foreach(object j in B_jobs.SelectedItems)
+            {
+               
+                
+                object[] job = { j };
+                string s = "UPDATE job set Status = 'Payed' where job_number = @val0;";
+                db.query(s, job);
+                db.close();
+            }
 
 
         }

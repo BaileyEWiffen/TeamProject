@@ -46,12 +46,46 @@ namespace bapers
                 }
                 dataReader.Dispose();
                 db.close();
-                dis = 1 - (dis / 10);
+                dis = 1 - (dis / 100);
 
                 price = (NoDis(selectedItems, customer) * dis);
 
 
 
+            }
+            else if(disType == "variable")
+            {
+                List<string> tasks = new List<string>();
+                foreach (object j in selectedItems)
+                {
+                    
+                    string s = "SELECT Task_ID from task_job where Job_number = @val0;";
+                    object[] o = { j };
+                    dataReader =  db.query(s, o);
+                    while (dataReader.Read())
+                    {
+                        tasks.Add(dataReader.GetValue(0).ToString());
+                    }
+                    dataReader.Dispose();
+                    db.close();
+                }
+
+                foreach (string s in tasks)
+                {
+                    string c = "Select t.price, v.Discount from task t left join variable_discount v on v.Tasktask_ID = t.task_ID where t.task_ID = @val0; ";
+                    object[] o = { s };
+                    dataReader = db.query(c, o);
+                    while (dataReader.Read())
+                    {
+                        int d = 0;
+                        if(dataReader.GetValue(1) != null)
+                        {
+                            d = (int)dataReader.GetValue(1);
+                        }
+                        price += ((float)dataReader.GetValue(0) * (1 - (d / 100)));
+                    }
+
+                }
             }
 
             

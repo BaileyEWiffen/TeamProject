@@ -28,3 +28,4 @@ C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\baper
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Acct.resources
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_NewUser.resources
 C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Paym.resources
+C:\Users\Bailey\Desktop\TeamProjectGit\TeamProject\bapers\bapers\obj\Debug\bapers.F_Rept.resources
