@@ -58,7 +58,7 @@ namespace bapers
                 MySqlConnection connection;             
                 MySqlCommand command;
 
-                string sql = "INSERT INTO customer (accountNumber, customerName, contactName, address, phone, valuedCustomer) VALUES ('"+accountNum+"','" + fullName+"','"+conName+"','"+address+"','"+phone+"','"+valuedCustomer+"');";//the sql statement to insert the data
+                string sql = "INSERT INTO customer VALUES ('"+accountNum+"','" + fullName+"','"+conName+"','"+address+"','"+phone+"',null,'"+valuedCustomer+"',null);";//the sql statement to insert the data
                 string connectionString = "SERVER=" + server + ";DATABASE=" + database + ";UID=" + uid + ";PASSWORD=" + password+";";//the connection string 
                 
                 connection = new MySqlConnection(connectionString);

@@ -181,5 +181,13 @@ namespace bapers
             }
            
         }
+
+        private void BT_newCust_Click(object sender, EventArgs e)
+        {
+            F_CustCreation fc = new F_CustCreation();
+            this.Hide();
+            fc.ShowDialog();
+            this.Show();
+        }
     }
 }

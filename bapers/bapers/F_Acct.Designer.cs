@@ -119,6 +119,7 @@
             this.BT_newCust.TabIndex = 5;
             this.BT_newCust.Text = "New Customer";
             this.BT_newCust.UseVisualStyleBackColor = true;
+            this.BT_newCust.Click += new System.EventHandler(this.BT_newCust_Click);
             // 
             // TB_tasks
             // 
