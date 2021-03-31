@@ -34,7 +34,7 @@ namespace bapers
             // TODO: This line of code loads data into the 'bapersDataSet.job' table. You can move, or remove it, as needed.
             //this.jobTableAdapter.Fill(this.bapersDataSet.job);
 
-            MessageBox.Show(user[1]);
+           
 
         }
 
@@ -134,20 +134,66 @@ namespace bapers
             MySqlDataReader reader = db.query(sql, o);
             B_Task.Items.Clear();
 
-
+            List<Job_task> j = new List<Job_task>();
 
             while (reader.Read())
             {
                 Job_task jt = new Job_task();
-
+                jt.job_number = (int)o[0];
                 jt.task_id = (int)reader[0];
                 jt.status = (int)reader[1];
-
+                j.Add(jt);
                 B_Task.Items.Add(jt.task_id.ToString() + " : " + jt.status.ToString());
 
             }
             db.close();
             reader.Dispose();
+
+            int a = 0;
+            int c = 0;
+            int no = 0;
+            foreach(Job_task jt in j)
+            {
+                if(jt.status ==1)
+                {
+                    a++;
+                    
+                }
+                else if(jt.status == 2)
+                {
+                    c++;
+                }
+            }
+            object[] stat = new object[2];
+            stat[1] = o[0];
+           
+            if (c == j.Count)
+            {
+              
+                stat[0] = "Complete";
+            }
+            else if (a>0)
+            {
+               
+                stat[0] = "Active";
+            }
+            else
+            {
+              
+                no = 1;
+            }
+
+            if(no == 0)
+            {
+                
+                string s = "UPDATE job set Status = @val0 where job_number =@val1;";
+                db.query(s, stat);
+                db.close();
+            }
+            //this.jobTableAdapter2.Fill(this.bapersDataSet1.job);
+            // TODO: This line of code loads data into the 'jobDeadlineStat.job' table. You can move, or remove it, as needed.
+            //this.jobTableAdapter1.Fill(this.jobDeadlineStat.job);
+
         }
 
         private void jobBindingSource_CurrentChanged(object sender, EventArgs e)
