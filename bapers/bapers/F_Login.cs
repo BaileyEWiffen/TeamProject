@@ -52,7 +52,7 @@ namespace bapers
             String sql, output = "";
             MySqlDataReader dataReader;
 
-            sql = "SELECT role FROM user WHERE UserName= @val0 AND password= @val1;";
+            sql = "SELECT role, UserName FROM user WHERE UserName= @val0 AND password= @val1;";
             object[] o = new object[2];
             o[0] = TB_email.Text;
             o[1] = TB_password.Text;
@@ -62,7 +62,7 @@ namespace bapers
             int dup = 0;
             while (dataReader.Read())//checks how many instances of the username and password there are in the database
             {
-                output = Convert.ToString(dataReader.GetValue(0));
+                output = Convert.ToString(dataReader.GetValue(0))+", "+Convert.ToString(dataReader.GetValue(1));
                 dup += 1;
             }
 
