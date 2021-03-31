@@ -12,14 +12,20 @@ namespace bapers
     {
         MySqlDataReader dataReader;
         DB_Connect db = new DB_Connect();
-        public float CalDiscount(object[] selectedItems, string customer)
+        public double CalDiscount(object[] selectedItems, string customer)
         {
+
+            if(selectedItems[0] == null)
+            {
+                return 0;
+            }
+
             string disType="";
-            float price = 0;
+            double price = 0;
             string sql = "select agreed_discount from customer where account_number =@val0;";
             object[] accNo = { customer };
             dataReader = db.query(sql, accNo);
-            float dis=0;
+            double dis =0;
             while (dataReader.Read())
             {
                 disType = dataReader.GetValue(0).ToString();
@@ -35,14 +41,14 @@ namespace bapers
                 price = NoDis(selectedItems, customer);
             }
 
-            else if(disType =="fixed")
+            else if(disType =="Fixed")
             {
                 sql = "select FixedDiscount from customer where account_number =@val0;";
                 dataReader = db.query(sql, accNo);
 
                 while (dataReader.Read())
                 {
-                    dis = (float)dataReader.GetValue(0);
+                    dis = (double)dataReader.GetValue(0);
                 }
                 dataReader.Dispose();
                 db.close();
@@ -53,7 +59,7 @@ namespace bapers
 
 
             }
-            else if(disType == "variable")
+            else if(disType == "Variable")
             {
                 List<string> tasks = new List<string>();
                 foreach (object j in selectedItems)
@@ -77,15 +83,46 @@ namespace bapers
                     dataReader = db.query(c, o);
                     while (dataReader.Read())
                     {
-                        int d = 0;
-                        if(dataReader.GetValue(1) != null)
+                        double d = 0;
+                        if(dataReader.GetValue(1) != DBNull.Value)
                         {
-                            d = (int)dataReader.GetValue(1);
+                            d = Convert.ToInt32(dataReader.GetValue(1));
                         }
                         price += ((float)dataReader.GetValue(0) * (1 - (d / 100)));
                     }
+                    db.close();
 
                 }
+            }
+            else if (disType == "Flexible")
+            {
+                double temp = NoDis(selectedItems, customer);
+
+                object[] o = { customer };
+                string s = "SELECT * from flexable_discount where Customeraccount_number = @val0;";
+                dataReader = db.query(s, o);
+                List < disF >  df = new List<disF>();
+                while (dataReader.Read())
+                {
+                    
+                    disF t = new disF();
+                    t.upper = (int)dataReader.GetValue(0);
+                    t.lower= (int)dataReader.GetValue(1);
+                    t.dis = (int)dataReader.GetValue(2);
+                    df.Add(t);
+                }
+
+                foreach(disF d in df)
+                {
+                    if ((temp > d.lower) && (temp < d.upper))
+                    {
+                        double dd = d.dis;
+                        
+                        double e = temp * (1 - (dd / 100));
+                        return e;
+                    }
+                }
+
             }
 
             
@@ -93,9 +130,9 @@ namespace bapers
             return price;
         }
 
-        private float NoDis(object[] selectedItems, string customer)
+        private double NoDis(object[] selectedItems, string customer)
         {
-            float p = 0;
+            double p = 0;
             
 
 
@@ -129,4 +166,12 @@ namespace bapers
 
 
     }
+}
+public class disF
+{
+    public int upper { get; set; } = 0;
+    public int lower { get; set; } = 0;
+    public int dis { get; set; } = 0;
+   
+
 }

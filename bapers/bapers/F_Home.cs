@@ -31,7 +31,7 @@ namespace bapers
 
         private void BT_PROC_Click(object sender, EventArgs e)
         {
-            F_Proc fp = new F_Proc();
+            F_Proc fp = new F_Proc(user);
             this.Hide();
             fp.ShowDialog();
             this.Show();
@@ -48,7 +48,11 @@ namespace bapers
 
         private void BT_REPT_Click(object sender, EventArgs e)
         {
-           
+            F_Rept fp = new F_Rept();
+            this.Hide();
+            fp.ShowDialog();
+            this.Show();
+
         }
 
       

@@ -14,7 +14,7 @@ namespace bapers
     public partial class F_Paym : Form
     {
         string accNo;
-        float p =0;
+        double p =0;
         public F_Paym()
         {
             InitializeComponent();

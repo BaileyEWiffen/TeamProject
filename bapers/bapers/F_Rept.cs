@@ -108,7 +108,7 @@ namespace bapers
                 {
                     int collection;
 
-                    if (dataReader.GetValue(0) == null)
+                    if (dataReader.GetValue(0) == DBNull.Value)
                     {
                         collection = 0;
                     }
