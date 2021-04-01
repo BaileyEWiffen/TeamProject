@@ -131,63 +131,91 @@ namespace bapers
 
         private void BT_createJob_Click(object sender, EventArgs e)
         {
-            if (B_contact.SelectedItem != null)
+
+            for(int i =0; i< Convert.ToInt32(TB_q.Text); i++)
             {
-                DB_Connect db = new DB_Connect();
-                MySqlDataReader dataReader;
-                string CustNo="";
-                
-
-                
-
-                string sql = "SELECT account_number FROM customer where contact_name = @val0;";
-                object[] o = new object[1];
-                o[0] = B_contact.SelectedItem.ToString();
-
-                dataReader = db.query(sql, o);
-
-                while (dataReader.Read())
+                if (B_contact.SelectedItem != null)
                 {
-                    CustNo = dataReader.GetValue(0).ToString();
-
-                }
-                dataReader.Dispose();
-                db.close();
+                    DB_Connect db = new DB_Connect();
+                    MySqlDataReader dataReader;
+                    string CustNo = "";
 
 
 
 
-                string sql2 = "INSERT INTO JOB values (@val0,@val1,@val2,@val3,@val4,@val5)";
-                object[] o2 = { Convert.ToInt32(TB_jobNo.Text),DateTime.Parse(TB_deadline.Text), TB_instr.Text, CustNo, "Pending", null };
-                dataReader = db.query(sql2, o2);
-                dataReader.Dispose();
-                db.close();
+                    string sql = "SELECT account_number FROM customer where contact_name = @val0;";
+                    object[] o = new object[1];
+                    o[0] = B_contact.SelectedItem.ToString();
 
+                    dataReader = db.query(sql, o);
 
+                    while (dataReader.Read())
+                    {
+                        CustNo = dataReader.GetValue(0).ToString();
 
-                foreach (string s in B_addedTask.Items)
-                {
-                    int id = Convert.ToInt32(s.Substring(0, 1));
-                    string create = "INSERT INTO task_job values (@val0,@val1,@val2,@val3,@val4,@val5)";
-                    object[] ob = { id, Convert.ToInt32(TB_jobNo.Text), null, null, null, 0 };
-                    dataReader = db.query(create, ob);
+                    }
                     dataReader.Dispose();
                     db.close();
 
+                    sql = "SELECT MAX(job_number) from job;";
+                    object[] job = new object[0];
+
+                    dataReader = db.query(sql, job);
+                    int jn = 0;
+                    while (dataReader.Read())
+                    {
+                        jn = Convert.ToInt32(dataReader.GetValue(0)) + 1;
+
+                    }
+                    dataReader.Dispose();
+                    db.close();
+
+
+
+                    string sql2 = "INSERT INTO JOB values (@val0,@val1,@val2,@val3,@val4,@val5);";
+                    object[] o2 = { jn, DateTime.Parse(TB_deadline.Text), TB_instr.Text, CustNo, "Pending", null };
+                    dataReader = db.query(sql2, o2);
+                    dataReader.Dispose();
+                    db.close();
+
+
+
+                    foreach (string s in B_addedTask.Items)
+                    {
+                        int id = Convert.ToInt32(s.Substring(0, 1));
+                        string create = "INSERT INTO task_job values (@val0,@val1,@val2,@val3,@val4,@val5,@val6);";
+                        object[] ob = { id, jn, null, null, null, 0, null };
+                        dataReader = db.query(create, ob);
+                        dataReader.Dispose();
+                        db.close();
+
+                    }
+                    MessageBox.Show("Successfully created Job for " + B_contact.SelectedItem.ToString());
+
+
                 }
-                MessageBox.Show("Successfully created Job for " + B_contact.SelectedItem.ToString());
 
 
             }
-           
+
+
         }
 
         private void BT_newCust_Click(object sender, EventArgs e)
         {
-            F_CustCreation fc = new F_CustCreation();
+            F_CustCreation fc = new F_CustCreation("");
             this.Hide();
             fc.ShowDialog();
             this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            F_CustCreation fc = new F_CustCreation(B_contact.SelectedItem.ToString());
+            this.Hide();
+            fc.ShowDialog();
+            this.Show();
+
         }
     }
 }

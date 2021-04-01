@@ -135,6 +135,7 @@
             this.Controls.Add(this.B_contact);
             this.Name = "F_Cust";
             this.Text = "F_Cust";
+            this.Load += new System.EventHandler(this.F_Cust_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

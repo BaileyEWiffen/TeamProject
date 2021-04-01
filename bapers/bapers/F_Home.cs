@@ -14,16 +14,18 @@ namespace bapers
     {
 
         private String user;
+        private string[] us = new string[2];
         public F_Home(String u )
         {
             InitializeComponent();
             user = u;
-            //MessageBox.Show("Hello " + user + "!");
+            us = user.Split(',');
+            MessageBox.Show("Hello " + us[0] + "!");
         }
 
         private void BT_ADMN_Click(object sender, EventArgs e)
         {
-            F_NewUser fu = new F_NewUser();
+            F_Admn fu = new F_Admn();
             this.Hide();
             fu.ShowDialog();
             this.Show();
@@ -59,7 +61,29 @@ namespace bapers
 
         private void F_Home_Load(object sender, EventArgs e)
         {
+            if(us[0] == "Shift Manager")
+            {
+                BT_CUST.Hide();
+                BT_ADMN.Hide();
 
+            }
+            else if (us[0] == "Receptionist")
+            {
+                BT_CUST.Hide();
+                BT_ADMN.Hide();
+                BT_PROC.Hide();
+                BT_REPT.Hide();
+
+            }
+            else if (us[0] == "Technician")
+            {
+                BT_CUST.Hide();
+                BT_ADMN.Hide();
+                BT_ACCT.Hide();
+                BT_REPT.Hide();
+                BT_PAYM.Hide();
+
+            }
         }
 
         private void BT_CUST_Click(object sender, EventArgs e)

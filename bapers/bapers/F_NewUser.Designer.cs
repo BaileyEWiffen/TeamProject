@@ -117,6 +117,7 @@
             this.Controls.Add(this.label1);
             this.Name = "F_NewUser";
             this.Text = "F_NewUser";
+            this.Load += new System.EventHandler(this.F_NewUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

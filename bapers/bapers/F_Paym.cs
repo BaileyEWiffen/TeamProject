@@ -32,7 +32,7 @@ namespace bapers
 
             B_contact.Items.Clear();
 
-            string sql = "SELECT contact_name FROM customer where contact_name like @val0;";
+            string sql = "SELECT customer_name FROM customer where customer_name like @val0;";
             object[] o = new object[1];
             o[0] = search + "%";
 
@@ -62,7 +62,7 @@ namespace bapers
 
             B_jobs.Items.Clear();
 
-            string sql = "select job.job_number from job inner join customer on job.Customeraccount_number=customer.account_number WHERE customer.contact_name = @val0 AND job.status NOT like 'Payed';";
+            string sql = "select job.job_number from job inner join customer on job.Customeraccount_number=customer.account_number WHERE customer.customer_name = @val0 AND job.status = 'Complete';";
             object[] o = new object[1];
             o[0] = B_contact.SelectedItem.ToString();
 

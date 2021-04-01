@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace bapers
 {
     public partial class F_Rept : Form
@@ -18,6 +20,7 @@ namespace bapers
         public F_Rept()
         {
             InitializeComponent();
+            CustSearch("");
         }
 
         private void BT_gen_Click(object sender, EventArgs e)
@@ -37,9 +40,9 @@ namespace bapers
                     " on t.Task_ID = Tj.Task_ID" +
                     " INNER JOIN User u" +
                     " ON u.UserName = Tj.Useremail" +
-                    " WHERE c.account_number = @val0 AND Tj.TimeTaken is not null; ";
+                    " WHERE c.customer_name = @val0 AND Tj.TimeTaken is not null; ";
 
-                object[] o = { TB_gen.Text };
+                object[] o = { B_contact.SelectedItem.ToString() };
                 dataReader = db.query(sql, o);
                 while (dataReader.Read())
                 {
@@ -293,6 +296,29 @@ namespace bapers
         {
             int j = 0;
             return j;
+        }
+
+        private void CustSearch(string search)
+        {
+
+            B_contact.Items.Clear();
+
+            string sql = "SELECT customer_name FROM customer where customer_name like @val0;";
+            object[] o = new object[1];
+            o[0] = search + "%";
+
+            dataReader = db.query(sql, o);
+
+            while (dataReader.Read())
+            {
+
+
+                B_contact.Items.Add(Convert.ToString(dataReader.GetValue(0)));
+
+
+            }
+            dataReader.Dispose();
+            db.close();
         }
 
     }

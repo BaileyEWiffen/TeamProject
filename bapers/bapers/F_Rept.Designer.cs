@@ -33,15 +33,18 @@
             this.B_gen = new System.Windows.Forms.ListBox();
             this.CB_rept = new System.Windows.Forms.ComboBox();
             this.TB_date = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.B_contact = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // BT_gen
             // 
-            this.BT_gen.Location = new System.Drawing.Point(570, 327);
+            this.BT_gen.Location = new System.Drawing.Point(554, 387);
             this.BT_gen.Name = "BT_gen";
             this.BT_gen.Size = new System.Drawing.Size(130, 51);
             this.BT_gen.TabIndex = 0;
-            this.BT_gen.Text = "button1";
+            this.BT_gen.Text = "Create";
             this.BT_gen.UseVisualStyleBackColor = true;
             this.BT_gen.Click += new System.EventHandler(this.BT_gen_Click);
             // 
@@ -79,11 +82,40 @@
             this.TB_date.Size = new System.Drawing.Size(126, 20);
             this.TB_date.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(516, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(516, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Date";
+            // 
+            // B_contact
+            // 
+            this.B_contact.FormattingEnabled = true;
+            this.B_contact.Location = new System.Drawing.Point(526, 136);
+            this.B_contact.Name = "B_contact";
+            this.B_contact.Size = new System.Drawing.Size(224, 212);
+            this.B_contact.TabIndex = 7;
+            // 
             // F_Rept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.B_contact);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TB_date);
             this.Controls.Add(this.CB_rept);
             this.Controls.Add(this.B_gen);
@@ -103,5 +135,8 @@
         private System.Windows.Forms.ListBox B_gen;
         private System.Windows.Forms.ComboBox CB_rept;
         private System.Windows.Forms.TextBox TB_date;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox B_contact;
     }
 }

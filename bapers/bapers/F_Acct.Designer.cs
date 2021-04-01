@@ -46,11 +46,11 @@
             this.la = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BT_createJob = new System.Windows.Forms.Button();
-            this.TB_jobNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TB_instr = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.TB_q = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactName2)).BeginInit();
@@ -182,22 +182,6 @@
             this.BT_createJob.UseVisualStyleBackColor = true;
             this.BT_createJob.Click += new System.EventHandler(this.BT_createJob_Click);
             // 
-            // TB_jobNo
-            // 
-            this.TB_jobNo.Location = new System.Drawing.Point(593, 44);
-            this.TB_jobNo.Name = "TB_jobNo";
-            this.TB_jobNo.Size = new System.Drawing.Size(161, 20);
-            this.TB_jobNo.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(647, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Job No";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -224,16 +208,34 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Instructions";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(126, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 25);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TB_q
+            // 
+            this.TB_q.Location = new System.Drawing.Point(473, 71);
+            this.TB_q.Name = "TB_q";
+            this.TB_q.Size = new System.Drawing.Size(40, 20);
+            this.TB_q.TabIndex = 19;
+            this.TB_q.Text = "1";
+            // 
             // F_Acct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TB_q);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TB_instr);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.TB_jobNo);
             this.Controls.Add(this.BT_createJob);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.la);
@@ -275,10 +277,10 @@
         private System.Windows.Forms.Label la;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BT_createJob;
-        private System.Windows.Forms.TextBox TB_jobNo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox TB_instr;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TB_q;
     }
 }

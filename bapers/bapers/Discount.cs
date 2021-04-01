@@ -119,7 +119,7 @@ namespace bapers
                         double dd = d.dis;
                         
                         double e = temp * (1 - (dd / 100));
-                        return e;
+                        price = e;
                     }
                 }
 
@@ -127,7 +127,7 @@ namespace bapers
 
             
 
-            return price;
+            return (price+(price*0.2));
         }
 
         private double NoDis(object[] selectedItems, string customer)

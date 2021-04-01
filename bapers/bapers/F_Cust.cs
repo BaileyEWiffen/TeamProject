@@ -32,7 +32,7 @@ namespace bapers
 
             B_contact.Items.Clear();
 
-            string sql = "SELECT contact_name FROM customer where contact_name like @val0;";
+            string sql = "SELECT customer_name FROM customer where customer_name like @val0;";
             object[] o = new object[1];
             o[0] = search + "%";
 
@@ -84,7 +84,7 @@ namespace bapers
         private void B_contact_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            string sql = "SELECT valued_customer from customer where contact_name = @val0;";
+            string sql = "SELECT valued_customer from customer where customer_name = @val0;";
             object[] o = { B_contact.SelectedItem.ToString() };
             dataReader = db.query(sql, o);
             Boolean temp =false;
@@ -112,7 +112,7 @@ namespace bapers
         {
             if (!b)
             {
-                string sql = "UPDATE customer set valued_customer = @val0 where contact_name= @val1;";
+                string sql = "UPDATE customer set valued_customer = @val0 where customer_name= @val1;";
                 object[] o = new object[2];
                 o[1] = B_contact.SelectedItem.ToString();
                 if (C_value.Checked)
@@ -133,14 +133,14 @@ namespace bapers
         private void BT_enter_Click(object sender, EventArgs e)
         {
 
-            string s = "update customer set agreed_discount = @val0 where contact_name =  @val1;";
+            string s = "update customer set agreed_discount = @val0 where customer_name =  @val1;";
             object[] o1 = {CB_dType.Text, B_contact.SelectedItem.ToString() };
             db.query(s, o1);
             db.close();
 
             if (CB_dType.Text == "Fixed")
             {
-                string sql = "update customer set agreed_discount = 'Fixed', FixedDiscount = @val0 where contact_name =  @val1;";
+                string sql = "update customer set agreed_discount = 'Fixed', FixedDiscount = @val0 where customer_name =  @val1;";
                 object[] o = { TB_discount.Text, B_contact.SelectedItem.ToString() };
                 db.query(sql, o);
                 db.close();
@@ -149,7 +149,7 @@ namespace bapers
             {
                 string sql = "SELECT c.account_number FROM variable_discount vd" +
                     " inner join customer c on vd.Customeraccount_number = c.account_number" +
-                    " where c.contact_name = @val0 and Tasktask_ID = @val1; ";
+                    " where c.customer_name = @val0 and Tasktask_ID = @val1; ";
                 object[] n = { B_contact.SelectedItem.ToString(), B_tasks.SelectedItem.ToString().Substring(0, 1) };
                 dataReader = db.query(sql, n);
                 string p = "No";
@@ -172,7 +172,7 @@ namespace bapers
                 }
                 else if(p == "No")
                 {
-                    sql = "INSERT INTO variable_discount values(@val0,@val1,(SELECT account_number from customer where contact_name = @val2) );";
+                    sql = "INSERT INTO variable_discount values(@val0,@val1,(SELECT account_number from customer where customer_name = @val2) );";
                     object[] updateV = { B_tasks.SelectedItem.ToString().Substring(0, 1), TB_discount.Text, B_contact.SelectedItem.ToString() };
                     db.query(sql, updateV);
                     db.close();
@@ -183,7 +183,7 @@ namespace bapers
             {
                 string sql = "SELECT c.account_number FROM flexable_discount fd" +
                     " inner join customer c on fd.Customeraccount_number = c.account_number" +
-                    " where c.contact_name = @val0 AND fd.upper = @val1 AND fd.lower = @val2; ";
+                    " where c.customer_name = @val0 AND fd.upper = @val1 AND fd.lower = @val2; ";
                 object[] n = { B_contact.SelectedItem.ToString(), TB_upper.Text, TB_lower.Text };
                 dataReader = db.query(sql, n);
                 string p = "No";
@@ -203,7 +203,7 @@ namespace bapers
 
                 }
                 
-                    sql = "INSERT INTO flexable_discount values(@val0,@val1,@val2,(SELECT account_number from customer where contact_name = @val3) );";
+                    sql = "INSERT INTO flexable_discount values(@val0,@val1,@val2,(SELECT account_number from customer where customer_name = @val3) );";
                     object[] updateV = { TB_upper.Text,TB_lower.Text, TB_discount.Text, B_contact.SelectedItem.ToString() };
                     db.query(sql, updateV);
                     db.close();
@@ -211,6 +211,11 @@ namespace bapers
                 
 
             }
+
+        }
+
+        private void F_Cust_Load(object sender, EventArgs e)
+        {
 
         }
     }
