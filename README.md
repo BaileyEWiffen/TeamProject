@@ -1,4 +1,3 @@
 
 # TeamProject
-Bailey wiffen
-Finlay Quinton
+A work control system 
